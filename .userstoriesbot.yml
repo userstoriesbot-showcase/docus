@@ -1,0 +1,13 @@
+# Showcase fork only (never part of an upstream pull request).
+version: 1
+app:
+  install: "corepack enable && pnpm install && pnpm run dev:prepare"
+  start: pnpm run playground:dev --port {port} --host 0.0.0.0
+  url: http://localhost:{port}
+  readyPath: /docs/getting-started/introduction
+  runtime: node22
+  env:
+    NODE_ENV: development
+demo:
+  maxVideos: 1
+  beforePass: true
